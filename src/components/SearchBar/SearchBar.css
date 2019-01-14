@@ -1,0 +1,11 @@
+.searchBarContainer {
+    display: flex;
+    justify-content: space-between;
+}
+
+.searchBarIconsContainer{
+    display: flex;
+    justify-content: space-between;
+    width: 15.5%;
+     
+}
