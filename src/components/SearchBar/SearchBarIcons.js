@@ -3,9 +3,9 @@ import React from 'react';
 const SearchBarIcons = () => {
     return (
         <div className='searchBarIconsContainer'>
-            <i class="far fa-compass"></i>
-            <i class="far fa-heart"></i>
-            <i class="far fa-user"></i>
+            <i className="far fa-compass"></i>
+            <i className="far fa-heart"></i>
+            <i className="far fa-user"></i>
         </div>
     )
 }

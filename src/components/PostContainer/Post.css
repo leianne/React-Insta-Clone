@@ -1,0 +1,35 @@
+.postMainImage {
+    width: 100%;
+}
+.postContainerHeader {
+    display: flex;
+    margin-bottom: 10px;
+   
+}
+
+.postContainerPost {
+    width: 60%;
+    font-size: .8rem;
+    margin: 0 auto 40px auto;
+}
+.image-cropper {
+    width: 40px;
+    height: 40px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 50%;
+}
+
+.postThumbnail{
+    display: inline;
+    margin: 0 auto;
+    margin-left: 0%;
+    height: 100%;
+    width: auto;
+
+}
+
+.postHeader {
+    font-size: .8rem;
+    margin-left: 10px;
+}
