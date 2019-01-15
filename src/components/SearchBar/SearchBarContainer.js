@@ -6,15 +6,30 @@ import SearchBarIcons from './SearchBarIcons';
 import SearchBarLogo from './SearchBarLogo';
 
 
-const SearchBarContainer = () => {
-    return (
-        <div className='searchBarContainer'>
-            <SearchBarLogo />
-            <SearchBarInput />
-            <SearchBarIcons />
+class SearchBarContainer extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            searchText: '',
+            data: this.props.data
+        }
 
-        </div>
-    )
+    }
+
+    handleChange = (ev) => {
+        this.setState({[ev.target.name]: ev.target.value})
+        console.log(this.state.data)
+    }
+    render() {
+        return (
+            <div className='searchBarContainer'>
+                <SearchBarLogo />
+                <SearchBarInput handleChange={this.handleChange} searchText={this.state.searchText}/>
+                <SearchBarIcons />
+    
+            </div>
+        )
+    }
 }
 
 export default SearchBarContainer;

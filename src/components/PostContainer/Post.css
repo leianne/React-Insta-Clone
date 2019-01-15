@@ -33,3 +33,7 @@
     font-size: .8rem;
     margin-left: 10px;
 }
+
+i:hover{
+    color: lightblue;
+}

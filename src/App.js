@@ -12,14 +12,26 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      data: dummyData,
+      data: [],
+      searchText: ''
     }
   }
+
+  componentDidMount() {
+     this.setState({data: dummyData})
+  }
+
+  
+  handleChanges = ev => {
+    this.setState({ [ev.target.name]: ev.target.value })
+    console.log(ev.target)
+  }
+
   render() {
     return (
       <div className="container">
-        <SearchBarContainer />
-        <PostContainer data={this.state.data}/>
+        <SearchBarContainer data={this.state.data}/>
+        <PostContainer handleChanges={this.handleChanges} commentInput={this.state.commentInput} data={this.state.data}/>
       </div>
     );
   }

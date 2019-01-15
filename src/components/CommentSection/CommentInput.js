@@ -1,10 +1,12 @@
 import React from 'react';
 
-const CommentInput = () => {
+const CommentInput = (props) => {
     return (
         <div className='commentInput--container'>
-            <input type='text' placeholder='Add a comment...'/>
-            <i class="fas fa-ellipsis-h"></i>
+            <form onSubmit={props.addComment}>
+            <input  name='comment'  type='text' placeholder='Add a comment...' value={props.comment} onChange={props.handleChanges}/> 
+            </form>
+            <i className="fas fa-ellipsis-h"></i>
         </div>
     )
 }

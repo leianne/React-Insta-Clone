@@ -1,9 +1,11 @@
 import React from 'react'
 
-const SearchBarInput = () => {
+const SearchBarInput = (props) => {
     return (
         <label className='searchBarInputContainer'>
-            <input className='searchBarInput' type="text"  placeholder="Search" />
+            <form onSubmit={props.addComment}>
+            <input  name='searchText'  className='searchBarInput' type='text' placeholder='Search' value={props.searchText} onChange={props.handleChange}/> 
+            </form>
         </label>
     )
 }

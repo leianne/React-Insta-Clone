@@ -1,10 +1,11 @@
 import React from 'react';
-
+import PropTypes from 'prop-types';
+ 
 const Post = (props) => {
     return (
         <div>
             <div className='postContainerHeader'>
-                <div class="image-cropper">
+                <div className="image-cropper">
                     <img className='postThumbnail' src={props.data.thumbnailUrl}/>
                 </div>
                 <h2 className='postHeader'>{props.data.username}</h2>
@@ -14,6 +15,14 @@ const Post = (props) => {
             </div>
         </div>
     )
+}
+
+Post.propTypes ={
+    data: PropTypes.shape({
+        thumbnailUrl: PropTypes.string,
+        username: PropTypes.string,
+        imageUrl: PropTypes.string
+    })
 }
 
 export default Post;
