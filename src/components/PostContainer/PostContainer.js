@@ -1,19 +1,20 @@
 import React from 'react';
 import PropTypes from 'prop-types';
- 
+import ids from 'short-id';
+
 import Post from './Post';
 import CommentContainer from '../CommentSection/CommentContainer';
-import CommentInput from '../CommentSection/CommentInput';
+
 import './Post.css'
 
 const PostContainer = (props) => {
     return (
-        <div className='postContainerPost' key={Date.now()}>
+        <div className='postContainerPost' key={ids.generate()}>
             {props.data.map((e, i) => {
                 return (
-                    <div>
-                        <Post data={e} key={Date.now()+i} />
-                        <CommentContainer handleChanges={props.handleChanges}  commentInput={props.commentInput} data={e} key={e+i}  />
+                    <div key={ids.generate()}>
+                        <Post data={e} key={ids.generate()} />
+                        <CommentContainer handleChanges={props.handleChanges}  commentInput={props.commentInput} data={e} key={ids.generate()}  />
                     </div>
                 )
             })}

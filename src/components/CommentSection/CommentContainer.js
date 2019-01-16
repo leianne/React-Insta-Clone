@@ -19,7 +19,8 @@ class CommentContainer extends React.Component {
         this.state = {
             comments: props.data.comments,
             comment: '',
-            likes: props.data.likes
+            likes: props.data.likes,
+            username: props.data.username
         }
     }
 
@@ -43,7 +44,13 @@ class CommentContainer extends React.Component {
         })
     }
 
-   
+   componentWillUpdate(nextProps, nextState) {
+        localStorage.setItem('username' , nextState.username);
+        
+        localStorage.setItem('commentDate', Date.now());
+        console.log(this.state)
+        
+   } 
 
     render() {
         return (

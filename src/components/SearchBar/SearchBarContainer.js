@@ -20,6 +20,7 @@ class SearchBarContainer extends React.Component {
         this.setState({[ev.target.name]: ev.target.value})
         console.log(this.state.data)
     }
+    
     render() {
         return (
             <div className='searchBarContainer'>
