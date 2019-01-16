@@ -36,10 +36,14 @@ class CommentContainer extends React.Component {
     }
 
     addLike = () => {
-        this.setState({
-            likes: ++this.state.likes
+        this.setState((prevState, props) => {
+            return {
+                likes: ++prevState.likes
+            }
         })
     }
+
+   
 
     render() {
         return (

@@ -13,7 +13,8 @@ class App extends Component {
     super();
     this.state = {
       data: [],
-      searchText: ''
+      searchText: '',
+      filterData: []
     }
   }
 
@@ -24,14 +25,27 @@ class App extends Component {
   
   handleChanges = ev => {
     this.setState({ [ev.target.name]: ev.target.value })
-    console.log(ev.target)
+    
+  }
+
+  searchData = (ev) => {
+    const post = this.state.data.filter(e => {
+      if(e.username.includes(ev.target.value)){
+        return e
+      }
+    })
+ 
+    this.setState({
+      filterData: post
+    })
+   console.log(this.state.filterData)
   }
 
   render() {
     return (
       <div className="container">
-        <SearchBarContainer data={this.state.data}/>
-        <PostContainer handleChanges={this.handleChanges} commentInput={this.state.commentInput} data={this.state.data}/>
+        <SearchBarContainer searchData={this.searchData}/>
+        <PostContainer handleChanges={this.handleChanges} commentInput={this.state.commentInput} data={this.state.filterData.length > 0 ? this.state.filterData : this.state.data}/>
       </div>
     );
   }

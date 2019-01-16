@@ -24,7 +24,7 @@ class SearchBarContainer extends React.Component {
         return (
             <div className='searchBarContainer'>
                 <SearchBarLogo />
-                <SearchBarInput handleChange={this.handleChange} searchText={this.state.searchText}/>
+                <SearchBarInput handleChange={this.handleChange} searchData={this.props.searchData}/>
                 <SearchBarIcons />
     
             </div>
