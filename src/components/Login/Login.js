@@ -1,5 +1,6 @@
 import React from 'react';
-import './Login.css'
+
+import { LoginContainer, LoginForm } from './LoginStyles';
 
 class Login extends React.Component {
     constructor(props) {
@@ -22,14 +23,14 @@ class Login extends React.Component {
 
     render() {
         return(
-        <div className='loginContainer'>
+        <LoginContainer>
             <img src='https://cdn.worldvectorlogo.com/logos/instagram-1.svg' alt='instaLogo' />
-            <form className='loginForm' onSubmit={this.login}>
+            <LoginForm  onSubmit={this.login}>
                 <input type='text' name='usernameInput' onChange={this.handleChange} value={this.state.usernameInput} />
                 <input type='text' name='passwordInput' onChange={this.handleChange} value={this.state.passwordInput} />
                 <button>Login</button>
-            </form>
-        </div>    
+            </LoginForm>
+        </LoginContainer>    
         )
     }
 }
