@@ -31,26 +31,20 @@ class CommentContainer extends React.Component {
     addComment = (ev) => {
         ev.preventDefault()
         this.setState({
-            comments: [...this.state.comments, {username: 'leianne', text: this.state.comment}],
+            comments: [...this.state.comments, {username: localStorage.getItem(localStorage.key('user')), text: this.state.comment}],
             comment: ''
         })
     }
 
     addLike = () => {
-        this.setState((prevState, props) => {
+        this.setState((prevState) => {
             return {
                 likes: ++prevState.likes
             }
         })
     }
 
-   componentWillUpdate(nextProps, nextState) {
-        localStorage.setItem('username' , nextState.username);
-        
-        localStorage.setItem('commentDate', Date.now());
-        console.log(this.state)
-        
-   } 
+   
 
     render() {
         return (

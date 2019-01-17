@@ -1,0 +1,36 @@
+.loginForm {
+    display: flex;
+    flex-direction: column; 
+    width: 40%;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    margin: 0 auto;
+}
+
+.loginForm input {
+    margin-bottom: 5%;
+    width: 80%;
+    height: 30px;
+    border-radius: 3px;
+    border: none
+}
+
+.loginForm button {
+    width: 80%;
+    height: 30px;
+    border-radius: 2px;
+    font-size: 17px;
+}
+.loginContainer {
+    text-align: center;
+    height: 100vh;
+    background: -moz-linear-gradient(top, #f9a7f8 0%, #e93cec 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, #f9a7f8 0%,#e93cec 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, #f9a7f8 0%,#e93cec 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+}
+.loginContainer img {
+    width: 30%;
+    margin-bottom: 30px;
+    margin-top: 15%;
+}
