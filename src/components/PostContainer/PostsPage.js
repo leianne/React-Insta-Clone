@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 
-
 import SearchBarContainer from '../SearchBar/SearchBarContainer';
 import PostContainer from './PostContainer';
 
 import dummyData from '../../dummyData';
+
+import { Container } from './PostStyles';
 
 class PostPage extends Component {
     constructor() {
@@ -36,10 +37,10 @@ class PostPage extends Component {
    
      render() {
        return (
-         <div className="container">
+         <Container>
            <SearchBarContainer searchData={this.searchData}/>
            <PostContainer handleChanges={this.handleChanges} commentInput={this.state.commentInput} data={this.state.filterData.length > 0 ? this.state.filterData : this.state.data}/>
-         </div>
+         </Container>
        );
      }
    }

@@ -7,9 +7,11 @@ import CommentContainer from '../CommentSection/CommentContainer';
 
 import './Post.css'
 
+import { PostHolder } from './PostStyles';
+
 const PostContainer = (props) => {
     return (
-        <div className='postContainerPost' key={ids.generate()}>
+        <PostHolder key={ids.generate()}>
             {props.data.map((e, i) => {
                 return (
                     <div key={ids.generate()}>
@@ -18,7 +20,7 @@ const PostContainer = (props) => {
                     </div>
                 )
             })}
-        </div>
+        </PostHolder>
     )
 }
 

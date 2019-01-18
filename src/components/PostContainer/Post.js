@@ -1,17 +1,19 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import { PostHeaderContainer, ImageCropper, PostThumbnail, PostHeader, PostImage } from './PostStyles';
+
 const Post = (props) => {
     return (
         <>
-            <div className='postContainerHeader' >
-                <div className="image-cropper" >
-                    <img className='postThumbnail' src={props.data.thumbnailUrl} alt={`${props.data.username}`}/>
-                </div>
-                <h2 className='postHeader'>{props.data.username}</h2>
-            </div>
+            <PostHeaderContainer>
+                <ImageCropper>
+                    <PostThumbnail src={props.data.thumbnailUrl} alt={`${props.data.username}`}/>
+                </ImageCropper>
+                <PostHeader>{props.data.username}</PostHeader>
+            </PostHeaderContainer>
             <div>
-                <img className='postMainImage' src={props.data.imageUrl} alt={`${props.data.username}`} />
+                <PostImage src={props.data.imageUrl} alt={`${props.data.username}`} />
             </div>
         </>
     )
